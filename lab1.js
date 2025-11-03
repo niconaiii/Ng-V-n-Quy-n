@@ -12,21 +12,21 @@
 // - Trên 30: Béo phì
 // }
 function caculateBMI(weight, height) {
-            const BMI = weight / (height * height)
-            let category = ""
-            if (BMI < 18.5) {
-                category = "Thiếu cân"
-            } else if (BMI < 24.9) {
-                category = "Binh thuong"
-            } else if (BMI < 29.9) {
-                category = "Thua can"
-            } else {
-                category = "Beo phi"
-            }
-            return `Chỉ số BMI của bạn là ${BMI.toFixed(2)} - phan loai: ${category}`
-        }
-        
-        document.getElementById("bmi").innerHTML = caculateBMI(52, 1.59)
+  const BMI = weight / (height * height)
+  let category = ""
+  if (BMI < 18.5) {
+    category = "Thiếu cân"
+  } else if (BMI < 24.9) {
+    category = "Binh thuong"
+  } else if (BMI < 29.9) {
+    category = "Thua can"
+  } else {
+    category = "Beo phi"
+  }
+  return `Chỉ số BMI của bạn là ${BMI.toFixed(2)} - phan loai: ${category}`
+}
+
+document.getElementById("bmi").innerHTML = caculateBMI(52, 1.59)
 
 // Ví dụ sử dụng
 // console.log(calculateBMI(70, 1.75)); // "BMI: 22.86 - Phân loại: Bình thường"
@@ -41,20 +41,22 @@ function caculateBMI(weight, height) {
 // // TODO: Sử dụng computed property names
 // }
 function createBook(title, author, year, price) {
-    return {
-    title,
-    author,
-    year,
-    price,
+  const book = {
+    title: title,
+    author: author,
+    year: year,
+    price: price,
     getBookInfo() {
-      return `${this.title} - ${this.author} (${this.year}) - Giá: ${this.price.toLocaleString()} VND`;
+      return `Tên sách: ${this.title}<br>
+              Tác giả: ${this.author}<br>
+              Năm xuất bản: ${this.year}<br>
+              Giá: ${this.price.toLocaleString()} VNĐ`;
     },
-    ["calculateDiscount"](discount) {
-      const final = this.price * (1 - discount / 100);
-      return `Sau khi giảm ${discount}%: ${final.toLocaleString()} VND`;
-    }
+    ["book_" + year]: true
   };
+  return book; // phải return để lấy được bên ngoài
 }
+
 
 
 // Ví dụ sử dụng

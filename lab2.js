@@ -12,9 +12,11 @@
 // Thêm thuộc tính điểm và in ra
 const student = {
   name: "ThuyTien",
-  age: 21,
-  grade: A
+  age: 22,
 };
+student.grade = "A"
+student.age = 21
+
 console.log(student)
 // Thực hiện các thao tác sau:
 // 1. Thêm thuộc tính grade với giá trị "A"

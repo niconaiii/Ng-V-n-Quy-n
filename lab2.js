@@ -12,7 +12,7 @@
 // Thêm thuộc tính điểm và in ra
 const student = {
   name: "ThuyTien",
-  age: 22,
+  age: 20,
 };
 student.grade = "A"
 student.age = 21

@@ -8,17 +8,40 @@
 
 
 
-// Tạo một object student với const
-// Thêm thuộc tính điểm và in ra
-const student = {
-  name: "ThuyTien",
-  age: 20,
-};
-student.grade = "A"
-student.age = 21
+// // Tạo một object student với const
+// // Thêm thuộc tính điểm và in ra
+// const student = {
+//   name: "ThuyTien",
+//   age: 20,
+// };
+// student.grade = "A"
+// student.age = 21
 
-console.log(student)
-// Thực hiện các thao tác sau:
-// 1. Thêm thuộc tính grade với giá trị "A"
-// 2. Thay đổi tuổi thành 21
-// 3. In ra toàn bộ thông tin student
+// console.log(student)
+// // Thực hiện các thao tác sau:
+// // 1. Thêm thuộc tính grade với giá trị "A"
+// // 2. Thay đổi tuổi thành 21
+// // 3. In ra toàn bộ thông tin student
+
+
+
+// String interpolation
+const name = "hoadv";
+const age = 25;
+console.log(`Xin chào, tôi là ${name}, năm nay ${age} tuổi.`);
+
+// Multi-line strings
+const message = `Đây là dòng đầu tiên
+Đây là dòng thứ hai
+Và đây là dòng thứ ba`;
+
+// Biểu thức trong template literals
+const a = 5;
+const b = 10;
+console.log(`Tổng của ${a} và ${b} là ${a + b}`);
+
+// Gọi hàm trong template literals
+function getCurrentTime() {
+  return new Date().toLocaleTimeString();
+}
+console.log(`Bây giờ là: ${getCurrentTime()}`);

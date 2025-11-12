@@ -1,6 +1,8 @@
+const { use } = require("react");
+
 function getFirstLast(array) {
-    // Your code here
-    return [array[0], array[array.length - 1]];
+  // Your code here
+  return [array[0], array[array.length - 1]];
 }
 
 console.log(getFirstLast([1, 2, 3, 4])); // [1, 4]
@@ -8,11 +10,11 @@ console.log(getFirstLast([1, 2, 3, 4])); // [1, 4]
 
 
 function swapElements(arr) {
-    // Your code here
-    const doiViTri = arr[1]
-    arr[1] = arr[3]
-    arr[3] = doiViTri
-    return arr
+  // Your code here
+  const doiViTri = arr[1]
+  arr[1] = arr[3]
+  arr[3] = doiViTri
+  return arr
 }
 
 console.log(swapElements([1, 2, 3, 4, 5])); // [1, 4, 3, 2, 5]
@@ -47,7 +49,7 @@ console.log(getUserInfo(user));
 
 function createProduct({ name, price, category = "general", inStock = true }) {
   // Your code here
-  return{
+  return {
     name,
     price,
     category,
@@ -58,3 +60,45 @@ function createProduct({ name, price, category = "general", inStock = true }) {
 const product = createProduct({ name: "Laptop", price: 999 });
 console.log(product);
 // { name: 'Laptop', price: 999, category: 'general', inStock: true }
+
+
+
+// Viết lại hàm này sử dụng async/await
+// function processOrder(orderId, callback) {
+//   getOrder(orderId, (order) => {
+//     getUser(order.userId, (user) => {
+//       getProducts(order.productIds, (products) => {
+//         callback({ order, user, products });
+//       });
+//     });
+//   });
+// }
+
+async function processOrder(orderId) {
+  try {
+    const order = await getOrder(orderId)
+    const user = await getUser(order.userId)
+    const products = await getProducts(order.productsId)
+
+    return {
+      order,
+      user,
+      products
+    }
+  }
+  catch (error) {
+    console.error("Processing failed:", error)
+  }
+}
+
+
+
+async function safeApiCall(apiFunction, ...args) {
+  // Your code here
+  try {
+    const data = await apiFunction(...args)
+    return [null, data]
+  } catch (error) {
+    return [error, undefined]
+  }
+}

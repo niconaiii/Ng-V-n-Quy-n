@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const tours = [
+    {
+      id: 1,
+      title: "Hạ Long Huyền Bí - 3 Ngày 2 Đêm",
+      image: "https://tructhang.vn/wp-content/uploads/2022/08/Vinh-Ha-Long-1024x576.jpg",
+    },
+    {
+      id: 2,
+      title: "Khám phá Phố Cổ Hội An",
+      image: "https://gocheapv.b-cdn.net/storage/app/media/Travel/h%E1%BB%99i%20an/pho-co-hoi-an.png",
+    },
+    {
+      id: 3,
+      title: "Đà Lạt Mộng Mơ - Tour Cắm Trại",
+      image: "https://samtenhills.vn/wp-content/uploads/2024/11/kinh-nghiem-du-lich-da-lat-1-minh.jpg",
+    },
+  ]
   return (
-    <>
+    <div className="max-w-7xl mx-auto bg-blue-50 pt-5">
+      <Header />
+      <hr />
+      <h1 className="font-bold text-5xl text-blue-500 mt-10">✈️ TOUR MANAGEMENT SYSTEM</h1>
+      <h2 className="pt-5 font-medium">Sẵn Sàng Cất Cánh: Các Điểm Đến Nổi Bật Mà Bạn Không Thể Bỏ Qua Trong Mùa Du Lịch Này</h2>
+      <div className="flex gap-2 my-4 justify-center">
+        {tours.map(tour => (
+          <div key={tour.id} className="w-1/3 max-w-sm">
+            <div className="h-64 overflow-hidden rounded-lg shadow-lg"> 
+              <img 
+                src={tour.image} 
+                alt={tour.title} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="font-semibold text-center mt-2">{tour.title}</h3>
+          </div>
+        ))}
+      </div>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Footer />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

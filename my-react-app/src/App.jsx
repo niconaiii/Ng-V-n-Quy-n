@@ -1,53 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Homepage";
+import About from "./pages/About";
 
 function App() {
-  const tours = [
-    {
-      id: 1,
-      title: "Hạ Long Huyền Bí - 3 Ngày 2 Đêm",
-      image: "https://tructhang.vn/wp-content/uploads/2022/08/Vinh-Ha-Long-1024x576.jpg",
-    },
-    {
-      id: 2,
-      title: "Khám phá Phố Cổ Hội An",
-      image: "https://gocheapv.b-cdn.net/storage/app/media/Travel/h%E1%BB%99i%20an/pho-co-hoi-an.png",
-    },
-    {
-      id: 3,
-      title: "Đà Lạt Mộng Mơ - Tour Cắm Trại",
-      image: "https://samtenhills.vn/wp-content/uploads/2024/11/kinh-nghiem-du-lich-da-lat-1-minh.jpg",
-    },
-  ]
-  return (
-    <div className="max-w-7xl mx-auto bg-blue-50 pt-5">
-      <Header />
-      <hr />
-      <h1 className="font-bold text-5xl text-blue-500 mt-10">✈️ TOUR MANAGEMENT SYSTEM</h1>
-      <h2 className="pt-5 font-medium">Sẵn Sàng Cất Cánh: Các Điểm Đến Nổi Bật Mà Bạn Không Thể Bỏ Qua Trong Mùa Du Lịch Này</h2>
-      <div className="flex gap-2 my-4 justify-center">
-        {tours.map(tour => (
-          <div key={tour.id} className="w-1/3 max-w-sm">
-            <div className="h-64 overflow-hidden rounded-lg shadow-lg"> 
-              <img 
-                src={tour.image} 
-                alt={tour.title} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h3 className="font-semibold text-center mt-2">{tour.title}</h3>
-          </div>
-        ))}
-      </div>
-      <div>
-        <Footer />
-      </div>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
-
 export default App;

@@ -1,10 +1,10 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import TourCard from "./components/TourCard";
+// import { useState } from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
+// import "./App.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import TourCard from "../components/TourCard";
 
 function App() {
   const tours = [
@@ -32,10 +32,10 @@ function App() {
       <Header />
       <hr />
       <main>
-        <h1 className="font-bold text-5xl text-blue-500 mt-10">
+        <h1 className="font-bold text-5xl text-blue-500 mt-10 flex justify-around">
           ✈️ TOUR MANAGEMENT SYSTEM
         </h1>
-        <h2 className="pt-5 font-medium mb-50">
+        <h2 className="pt-5 font-medium mb-50 flex justify-around">
           Sẵn Sàng Cất Cánh: Các Điểm Đến Nổi Bật Mà Bạn Không Thể Bỏ Qua Trong
           Mùa Du Lịch Này
         </h2>

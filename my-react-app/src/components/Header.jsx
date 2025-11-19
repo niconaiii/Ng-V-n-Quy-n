@@ -4,22 +4,22 @@ function Header() {
       <ul className="flex items-center justify-around font-semibold">
         <li>
           <a className="px-5 font-bold" href="#">
-            🏠 Home
+            Home
           </a>
         </li>
         <li>
           <a className="px-5 font-bold" href="#">
-            📋 Tours
+            Tours
           </a>
         </li>
         <li>
           <a className="px-5 font-bold" href="#">
-            🗺️ Destinations
+            Destinations
           </a>
         </li>
         <li>
           <a className="px-5 font-bold" href="#">
-            🎫 Bookings
+            Bookings
           </a>
         </li>
       </ul>

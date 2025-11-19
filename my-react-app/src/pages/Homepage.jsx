@@ -31,7 +31,7 @@ function Home() {
     return (
         <div className="max-w-7xl mx-auto py-10"> 
             <Header />
-            <hr className="mb-6" />
+            <hr className="mt-5 h-3 border-gray-300"/>
             <main>
                 <h1 className="font-extrabold text-4xl md:text-5xl text-blue-500 text-center mb-2">
                     TOUR MANAGEMENT SYSTEM
